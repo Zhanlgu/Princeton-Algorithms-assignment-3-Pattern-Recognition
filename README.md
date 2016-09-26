@@ -1,5 +1,6 @@
 # Princeton-Algorithms-assignment-3-Pattern-Recognition
-Two ways to solve the collinear points problem. Here shows the problems I met when doing this homework.
+Two ways to solve the collinear points problem. Here shows the problems I met when doing this homework.  
+Score: 99/100
 
 ## Point.java
 * **Interface: comparator**
@@ -35,7 +36,8 @@ Because of the fixed API definition, I simply use an `ArrayList<T>` and `ArrayLi
 ArrayList<LineSegment> storeSegments = new ArrayList<LineSegment>();  
 lineSegments = storeSegments.toArray(new LineSegment[storeSegments.size()]);
 ```
-I use `clone()` to return the array. But I still have bugs in the Test 10 of `BruteCollinearPoints.java`.
+I use `clone()` to return the array. But I still have bugs in the Test 10 of `BruteCollinearPoints.java`.  
+## FastCollinearPoints.java
 * **How to find only unique line segments**  
 When I first met the duplicate line segments bug, I find all the way to delete the duplicate line segment. This solution mainly compares the duplicate line segments to the existed line segment. I read lots of people at the course discussion group using hash or extra memory to complete this function. However, we should think of the problem from another aspect.  
 We shoud not let the duplicate line segment be selected. The duplicate line segment happens at the begin and end point of one line. SO if we just let one point be selected and the other one fails. Then we don't have to delete the other point. I add just one constraint to the selection of line segment:
